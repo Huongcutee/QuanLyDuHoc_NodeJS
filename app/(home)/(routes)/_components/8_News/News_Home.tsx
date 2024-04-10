@@ -13,7 +13,7 @@ const News_Home = ({ news }: Props) => {
           Tin Tức Du Học
         </p>
       </div>
-      <div className="md:gap-8 gap-4 h-full flex items-center overflow-x-auto snap-x snap-mandatory pb-[2%]">
+      <div className="md:gap-8 gap-4 h-full flex items-center overflow-x-auto snap-x snap-mandatory pb-[2%] w-full">
         {news.map((singleNews) => (
           <News_Card key={singleNews.id} news={singleNews} />
         ))}

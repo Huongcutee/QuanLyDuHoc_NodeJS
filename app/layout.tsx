@@ -21,8 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn("h-full", font.className)}>
-        <ToastProvider />
-        <ModalProvider />
+        
         {children}
       </body>
     </html>

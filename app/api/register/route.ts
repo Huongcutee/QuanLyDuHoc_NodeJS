@@ -1,7 +1,4 @@
-import bcrypt from "bcrypt";
-
 import { NextResponse } from "next/server";
-import { getAuthSession } from "../../../lib/nextauth";
 import axios from "axios";
 import { formCreateUserSchema } from "../../../constants/form-create-user-schema";
 
@@ -21,9 +18,9 @@ export async function POST(req: Request) {
         ...values,
       }
     );
-
     return NextResponse.json(response.data);
   } catch (error) {
+    console.log("*************" + error);
     return new NextResponse("Tạo tài khoản thất bại", { status: 500 });
   }
 }

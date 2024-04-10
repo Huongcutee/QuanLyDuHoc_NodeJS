@@ -1,7 +1,6 @@
 import React from "react";
 import getNewsById from "../../../../action/get-news-by-id";
 import getNews from "../../../../action/get-news";
-import News_Card from "../../(routes)/_components/8_News/News_Card";
 import { format } from "date-fns";
 import { vi } from "date-fns/locale";
 import { Preview } from "./preview";

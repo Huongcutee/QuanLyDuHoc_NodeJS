@@ -6,11 +6,10 @@ import LogoHome from "./logo_Home";
 import NavItemHome from "./nav-item_Home";
 import NavBtHome from "./nav_button_Home";
 import { School, User } from "@prisma/client";
-import { SafeUser } from "../../types";
 
 interface Props {
   schools: School[];
-  currentUser?: SafeUser | null;
+  currentUser?;
 }
 
 const Navbar = ({ schools, currentUser }: Props) => {

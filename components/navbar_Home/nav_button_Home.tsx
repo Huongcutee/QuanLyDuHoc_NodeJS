@@ -2,13 +2,12 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
-import { SafeUser } from "../../types";
 import { signOut } from "next-auth/react";
 
 const links = ["Đăng Nhập", "Đăng Ký"];
 
 type Props = {
-  currentUser?: SafeUser | null;
+  currentUser?;
 };
 
 export default function NavBtSeo({ currentUser }: Props) {

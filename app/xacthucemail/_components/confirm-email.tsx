@@ -3,7 +3,6 @@
 import React from "react";
 import Link from "next/link";
 import axios from "axios";
-import toast from "react-hot-toast";
 import {
   Card,
   CardContent,
@@ -13,9 +12,9 @@ import {
   CardTitle,
 } from "../../../components/ui/card";
 import { Button } from "../../../components/ui/button";
-import { SafeUser } from "../../../types";
+import toast from "react-hot-toast";
 
-type Props = { currentUser: SafeUser };
+type Props = { currentUser };
 
 const ConfirmEmail = ({ currentUser }: Props) => {
   const isEmailVerified = currentUser.emailVerified;
@@ -35,7 +34,6 @@ const ConfirmEmail = ({ currentUser }: Props) => {
       );
       toast.success("Gửi email thành công");
     } catch (error) {
-      console.log(error);
       toast.error("Gửi email thất bại");
     }
   };

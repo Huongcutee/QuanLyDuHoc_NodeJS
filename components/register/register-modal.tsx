@@ -10,7 +10,7 @@ import Heading from "../heading";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Form,
   FormControl,
@@ -88,7 +88,6 @@ export default function RegisterModal({ schools }: Props) {
 
   const onSubmit = async (values: z.infer<typeof formCreateUserSchema>) => {
     try {
-      console.log(values);
       await axios.post("/api/register", values);
       registerForm.reset();
       signIn("credentials", {
@@ -96,8 +95,7 @@ export default function RegisterModal({ schools }: Props) {
         redirect: false,
       });
       router.push("/xacthucemail");
-    } catch (error) {
-    }
+    } catch (error) {}
   };
 
   const handlePrev = () => {
@@ -473,9 +471,9 @@ export default function RegisterModal({ schools }: Props) {
 
   const warningText = !isComplete
     ? "Thiếu thông tin: " +
-    requiredFields.map((field, index) =>
-      !field ? ` ${requiredFieldNames[index]}` : ""
-    )
+      requiredFields.map((field, index) =>
+        !field ? ` ${requiredFieldNames[index]}` : ""
+      )
     : "Bạn đã hoàn thành tất cả thông tin";
 
   if (!isMounted) {
